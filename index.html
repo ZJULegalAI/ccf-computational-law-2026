@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCF计算法学分会第五届学术年会</title>
+<style>
+:root{
+  --bg:#ffffff;
+  --bg-soft:#f8fafc;
+  --bg-dark:#0f172a;
+  --text:#0f172a;
+  --text-soft:#475569;
+  --text-light:#cbd5e1;
+  --line:#e5e7eb;
+  --card:#ffffff;
+  --radius:22px;
+  --shadow:0 10px 28px rgba(15,23,42,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color:var(--text);background:var(--bg);line-height:1.75}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:0 auto}
+.site-header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:74px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-box{width:42px;height:42px;border-radius:12px;background:var(--bg-dark);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+.brand-text small{display:block;color:#64748b;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.brand-text strong{font-size:15px}
+.nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.nav a{font-size:14px;color:#475569;font-weight:600}
+.nav a:hover{color:#111827}
+.nav .button{background:var(--bg-dark);color:#fff;padding:10px 16px;border-radius:12px}
+.hero{background:radial-gradient(circle at 100% 0%, rgba(99,102,241,.22), transparent 28%),radial-gradient(circle at 0% 30%, rgba(14,165,233,.16), transparent 24%),var(--bg-dark);color:#fff;border-bottom:1px solid #1e293b}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;padding:90px 0}
+.eyebrow{display:inline-block;border:1px solid rgba(255,255,255,.16);color:#cbd5e1;border-radius:999px;padding:7px 14px;font-size:12px;font-weight:700;letter-spacing:.14em}
+h1{margin:18px 0 12px;font-size:clamp(38px,5vw,60px);line-height:1.08}
+.hero-subtitle{font-size:clamp(20px,2.2vw,28px);font-weight:600;color:#e2e8f0;margin-bottom:22px}
+.hero p{color:#cbd5e1;font-size:17px;max-width:820px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:16px;font-size:14px;font-weight:700;transition:.2s ease;border:1px solid transparent}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:#fff;color:#0f172a}
+.btn-secondary{border-color:rgba(255,255,255,.16);color:#fff;background:rgba(255,255,255,.03)}
+.hero-panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:26px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.18)}
+.panel-title,.section-tag{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#94a3b8}
+.info-list{display:grid;gap:14px;margin-top:18px}
+.info-item{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);border-radius:18px;padding:14px 16px}
+.info-item span{display:block;color:#94a3b8;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:5px}
+.info-item strong{font-size:18px;color:#fff}
+section{padding:82px 0}
+.section-head{max-width:780px;margin-bottom:34px}
+.section-head h2{margin:10px 0 14px;font-size:clamp(30px,3vw,42px);line-height:1.2}
+.section-head p{margin:0;color:var(--text-soft);font-size:16px}
+.grid-2{display:grid;grid-template-columns:.95fr 1.05fr;gap:30px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.card.soft{background:var(--bg-soft);box-shadow:none}
+.meta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 24px;font-size:15px}
+.meta-grid strong,.contact-card strong{display:block;margin-bottom:4px;font-size:15px;color:#111827}
+.highlight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.highlight-no{width:40px;height:40px;border-radius:14px;background:var(--bg-dark);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;margin-bottom:14px}
+.topics-wrap{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.topic-card h3{margin:0 0 14px;font-size:19px;line-height:1.5}
+.topic-card ul,.notes-list,.pub-list{margin:0;padding-left:20px;color:var(--text-soft)}
+.topic-card li,.notes-list li,.pub-list li{margin:8px 0}
+.submission-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px}
+.requirement-list{display:grid;gap:18px;list-style:none;margin:0;padding:0}
+.requirement-item{display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start}
+.requirement-no{width:38px;height:38px;border-radius:999px;background:var(--bg-dark);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px;margin-top:2px}
+.dark-section{background:var(--bg-dark);color:#fff;border-top:1px solid #1e293b;border-bottom:1px solid #1e293b}
+.dark-section .section-head p,.dark-section .section-tag{color:#94a3b8}
+.dark-card{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.04);border-radius:var(--radius);padding:24px}
+.dark-card p,.dark-card li{color:#cbd5e1}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px}
+.contact-card>div{margin-bottom:16px}.contact-card>div:last-child{margin-bottom:0}
+.footer{border-top:1px solid var(--line);background:var(--bg-soft)}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;padding:24px 0;color:#64748b;font-size:14px}
+@media (max-width:1024px){.hero-grid,.grid-2,.submission-grid,.contact-grid{grid-template-columns:1fr}.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){.header-inner{min-height:auto;padding:14px 0;align-items:flex-start}.nav{gap:12px}.nav a{font-size:13px}.hero-grid{padding:60px 0}.grid-3,.highlight-grid,.meta-grid{grid-template-columns:1fr}section{padding:62px 0}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#home">
+      <div class="brand-box">CCF</div>
+      <div class="brand-text">
+        <small>CCF 计算法学</small>
+        <strong>第五届学术年会投稿网站</strong>
+      </div>
+    </a>
+    <nav class="nav">
+      <a href="#about">会议概览</a>
+      <a href="#topics">征文主题</a>
+      <a href="#submission">论文提交</a>
+      <a href="#publication">论文集与推荐</a>
+      <a href="#contact">联系方式</a>
+      <a class="button" href="#submission">立即查看投稿</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">2026 征稿启事</div>
+        <h1>CCF计算法学分会第五届学术年会</h1>
+        <div class="hero-subtitle">“大模型时代计算法学研究的双面性”学术研讨会</div>
+        <p>在大模型技术快速发展、生成式人工智能能力持续提升的背景下，法治运行方式与数字空间治理方式正在发生显著变化：一方面，司法、执法、法学研究、法律服务与法学教育加快数字化升级，智慧司法、智能合同、数据分析等方面的应用不断落地；另一方面，大模型的训练数据、算法决策与平台生态也引出数据权利、隐私保护、算法偏差、安全与责任分配等新问题，需要通过法律规则与技术治理协同回应。基于这种双向张力，本届年会以“大模型时代计算法学研究的双面性”为主题，紧密围绕计算法学的基础、方法、工具、系统与应用展开讨论。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#submission">投稿说明</a>
+          <a class="btn btn-secondary" href="#topics">查看征文主题</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <div class="panel-title">会议信息</div>
+        <div class="info-list">
+          <div class="info-item"><span>会议时间</span><strong>2026年11月8日</strong></div>
+          <div class="info-item"><span>投稿截止</span><strong>2026年9月30日</strong></div>
+          <div class="info-item"><span>录用通知</span><strong>2026年10月31日前</strong></div>
+          <div class="info-item"><span>会议地点</span><strong>浙江大学（杭州）</strong></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">会议概览</div>
+        <h2>会议宗旨与举办信息</h2>
+        <p>本届年会致力于：一、搭建法学、人工智能与计算机科学等领域的高层次学术对话平台，推进计算法学学科理论与体系建构；二、倡导实证研究的新范式与可重复研究标准，促进数据、方法与结论的可核验与可积累；三、深入讨论大模型的可信、可解释、可问责与合规机制；四、聚焦大模型驱动的法律场景创新，推动可落地的系统方法、评测基准与实践应用。</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card soft">
+          <div class="meta-grid">
+            <div>
+              <strong>主办单位</strong>
+              <div>中国计算机学会（CCF）</div>
+            </div>
+            <div>
+              <strong>会议时间</strong>
+              <div>2026年11月8日</div>
+            </div>
+            <div>
+              <strong>会议地点</strong>
+              <div>浙江大学（杭州）</div>
+            </div>
+            <div>
+              <strong>会议形式</strong>
+              <div>学术年会</div>
+            </div>
+            <div style="grid-column:1 / -1;">
+              <strong>承办单位</strong>
+              <div>中国计算机学会（CCF）计算法学分会、浙江大学光华法学院、浙江大学数字法治实验室、浙江大学数字法治研究院</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-grid">
+          <div class="card">
+            <div class="highlight-no">01</div>
+            <div>搭建法学、人工智能与计算机科学等领域的高层次学术对话平台，推进计算法学学科理论与体系建构。</div>
+          </div>
+          <div class="card">
+            <div class="highlight-no">02</div>
+            <div>倡导实证研究的新范式与可重复研究标准，促进数据、方法与结论的可核验与可积累。</div>
+          </div>
+          <div class="card">
+            <div class="highlight-no">03</div>
+            <div>深入讨论大模型的可信、可解释、可问责与合规机制。</div>
+          </div>
+          <div class="card">
+            <div class="highlight-no">04</div>
+            <div>聚焦大模型驱动的法律场景创新，推动可落地的系统方法、评测基准与实践应用。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="topics-wrap" id="topics">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">征文主题</div>
+        <h2>本次征文聚焦计算法学的基础、方法、工具、系统与应用</h2>
+        <p>议题可能包括但不限于以下内容，欢迎海内外法学、计算机科学等领域的专家学者、实务界同仁及青年研究者踊跃投稿参会。</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card topic-card">
+          <h3>分论坛一：计算法学的学科理论与体系建构</h3>
+          <ul>
+            <li>计算法学的概念界定、基本范畴与核心命题</li>
+            <li>计算法学的跨学科知识结构与人才培养体系</li>
+            <li>计算法学的本土化评价标准与学科边界</li>
+            <li>法教义学、法社会学与计算法学的融合机制</li>
+          </ul>
+        </article>
+
+        <article class="card topic-card">
+          <h3>分论坛二：计算法学的研究方法</h3>
+          <ul>
+            <li>大模型参与的实证研究设计与偏差控制</li>
+            <li>法律数据构建、标注规范与测量误差校正方法</li>
+            <li>法律文本计算的计量基础与可解释指标体系建构</li>
+            <li>因果推断与反事实框架在法律适用效果评估中的应用</li>
+          </ul>
+        </article>
+
+        <article class="card topic-card">
+          <h3>分论坛三：法律文本处理与法律语言智能</h3>
+          <ul>
+            <li>法律文本分类、信息抽取、自动摘要与生成式任务</li>
+            <li>法律检索、问答、类案推荐与文献推荐系统</li>
+            <li>论证挖掘、裁判说理结构化与可视化</li>
+            <li>大模型在法律领域的应用</li>
+            <li>多模态法律信息处理</li>
+          </ul>
+        </article>
+
+        <article class="card topic-card">
+          <h3>分论坛四：形式化推理模型与规范系统</h3>
+          <ul>
+            <li>裁判规则的可计算表达语言与知识表示</li>
+            <li>法律推理的形式与计算模型</li>
+            <li>证据推理的形式与计算模型</li>
+            <li>神经—符号结合方法在规范推理中的应用与评估</li>
+          </ul>
+        </article>
+
+        <article class="card topic-card">
+          <h3>分论坛五：法治场景中的大模型应用与评测</h3>
+          <ul>
+            <li>裁判辅助、量刑/类案分析、证据审查、庭审支持系统</li>
+            <li>行政执法与公共治理的决策支持、风险预警与因果推断</li>
+            <li>数据集、基准评测、复现研究与可重复性</li>
+            <li>大模型在法律实践中的有效边界、失误类型与纠错机制</li>
+          </ul>
+        </article>
+
+        <article class="card topic-card">
+          <h3>分论坛六：大模型治理：风险、责任与制度设计</h3>
+          <ul>
+            <li>可解释性、透明度、偏见与歧视防控、数据质量标准</li>
+            <li>隐私保护、数据权利、跨境数据流动与安全</li>
+            <li>责任分配、审计与问责、行业自律与监管协同</li>
+            <li>AI伦理、可信AI与法律职业规范的重构</li>
+          </ul>
+        </article>
+
+        <article class="card topic-card">
+          <h3>分论坛七：法律科技产品与系统落地</h3>
+          <ul>
+            <li>法律科技产品的需求洞察、用户研究与落地场景</li>
+            <li>法律大模型在司法、律所、企业合规中的应用边界</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="submission">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">论文提交</div>
+        <h2>投稿要求与格式规范</h2>
+        <p>本次会议除了特邀嘉宾，所有发言嘉宾均需提交论文。论文应系作者原创，且未在国内外公开发行刊物公开发表，语言可使用中文、英文。</p>
+      </div>
+
+      <div class="submission-grid">
+        <div class="card">
+          <ol class="requirement-list">
+            <li class="requirement-item"><div class="requirement-no">1</div><div>投稿截止时间为2026年9月30日，录用通知将于2026年10月31日前发出。来稿请注明“计算法学学术研讨会”。</div></li>
+            <li class="requirement-item"><div class="requirement-no">2</div><div>论文首页请用脚注写明作者姓名、所在单位、职称、电子邮件、联系电话等，论文采用 Word 形式进行投稿。</div></li>
+            <li class="requirement-item"><div class="requirement-no">3</div><div>中文论文主标题统一为小二宋体，论文正文统一使用小四号宋体，段前段后0行、行间距1.15倍。</div></li>
+            <li class="requirement-item"><div class="requirement-no">4</div><div>全文不区分注释与参考文献；均以 Word 方式每页自动生成脚注，每页重新编号；同一文献多次引用时请均使用全称，无需参引或作任何简称处理。</div></li>
+            <li class="requirement-item"><div class="requirement-no">5</div><div>中文论文具体格式请参考使用《法学引注手册》相关规范，英文论文请按照相应学术规范并保持格式统一。</div></li>
+          </ol>
+        </div>
+
+        <div>
+          <div class="card" style="background:#0f172a;color:white;border-color:#1e293b;margin-bottom:20px;">
+            <div class="panel-title">投稿入口</div>
+            <h3 style="margin:12px 0 10px;font-size:30px;line-height:1.2;color:white;">投稿方式待补充</h3>
+            <p style="color:#cbd5e1;margin:0 0 22px;">这里可以替换为收稿邮箱、在线表单、会议管理系统或投稿平台链接。当前模板已预留按钮位置。</p>
+            <div class="hero-actions" style="margin-top:0;">
+              <a class="btn btn-primary" href="#contact">投稿入口占位</a>
+              <a class="btn btn-secondary" href="#contact">下载征稿启事</a>
+            </div>
+          </div>
+
+          <div class="card soft">
+            <div class="section-tag">重要时间</div>
+            <ul class="notes-list">
+              <li>投稿截止：2026年9月30日</li>
+              <li>录用通知：2026年10月31日前</li>
+              <li>投稿语言：中文 / 英文</li>
+              <li>论文格式：Word 文档</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section" id="publication">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">论文集与优秀论文推荐</div>
+        <h2>录用、推荐与后续使用方式</h2>
+        <p>年会录用论文的收录、推荐与后续使用说明如下。</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="dark-card">
+          <div class="panel-title">01</div>
+          <p>录用论文将收录至年会论文集，论文集仅提供会议使用，不公开出版。</p>
+        </div>
+        <div class="dark-card">
+          <div class="panel-title">02</div>
+          <p>大会将评选优秀论文，拟推荐至领域内相关期刊发表。被推荐的论文将由期刊进行二次审查，并由期刊决定最终录用结果。</p>
+        </div>
+        <div class="dark-card">
+          <div class="panel-title">03</div>
+          <p>如作者无特殊说明，入选论文后续发表后，计算法学分会可将其编入计算法学丛书。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">联系方式</div>
+        <h2>会务联络</h2>
+        <p>会议报名注册、参会费用、交通住宿等事项将另行通知。</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card soft contact-card">
+          <div>
+            <strong>会务组收稿及联络邮箱</strong>
+            <div>××</div>
+          </div>
+          <div>
+            <strong>联系人</strong>
+            <div>××</div>
+          </div>
+          <div>
+            <strong>说明</strong>
+            <div>正式上线前，可将此处替换为具体收稿邮箱、联系人姓名与电话，或改为二维码、表单链接等方式。</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-tag">GitHub Pages 发布方式</div>
+          <h3 style="margin:12px 0 16px;font-size:30px;line-height:1.2;">如何直接上线这个中文网站</h3>
+          <ol class="notes-list" style="padding-left:20px;">
+            <li>将这份代码保存为 <code>index.html</code>。</li>
+            <li>在 GitHub 新建一个仓库，例如 <code>ccf-computational-law-2026</code>。</li>
+            <li>把 <code>index.html</code> 上传到仓库根目录。</li>
+            <li>进入仓库 <code>Settings → Pages</code>。</li>
+            <li>在 <code>Build and deployment</code> 中选择 <code>Deploy from a branch</code>。</li>
+            <li>选择 <code>main</code> 分支和 <code>/root</code> 目录后保存。</li>
+            <li>稍等片刻，GitHub 会自动生成公开网址。</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© 2026 CCF计算法学分会第五届学术年会</div>
+    <div>中文单文件 HTML 模板</div>
+  </div>
+</footer>
+</body>
+</html>
