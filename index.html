@@ -130,7 +130,62 @@ height:50px;
 width:auto;
 margin-right:12px;
 }
-  
+
+.deadline-box{
+  background: #f8fafc;
+  border-left: 5px solid #1e3a8a;
+  padding: 18px 22px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.deadline-main{
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.deadline-main span{
+  color: #dc2626;
+  font-weight: 800;
+}
+
+.deadline-sub{
+  margin-top: 6px;
+  font-size: 16px;
+  color: #444;
+}
+
+.deadline-box{
+  background:#f8fafc;
+  border-left:5px solid #1e3a8a;
+  padding:20px 24px;
+  margin-bottom:32px;
+  border-radius:8px;
+}
+
+.deadline-main{
+  font-size:20px;
+  font-weight:600;
+  line-height:1.8;
+}
+
+.deadline-main span{
+  color:#dc2626;
+  font-weight:800;
+}
+
+.deadline-sub{
+  margin-top:6px;
+  font-size:15px;
+  color:#555;
+}
+
+.format-lead{
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:20px;
+}
 </style>
 </head>
 <body>
@@ -343,17 +398,20 @@ margin-right:12px;
       <div class="submission-grid">
         <div class="card">
 
-          <div class="deadline-note">
-            投稿截止时间为<strong>2026年9月30日</strong>，录用通知将于<strong>2026年10月31日前</strong>发出。
+          <div class="deadline-box">
+            <div class="deadline-main">
+              投稿截止时间为 <span>2026年9月30日</span>，
+              录用通知将于 <span>2026年10月31日前</span> 发出
+            </div>
+          
+            <div class="deadline-sub">
+              来稿请注明“计算法学学术研讨会”
+            </div>
           </div>
         
-          <div class="submission-note">
-            来稿请注明“计算法学学术研讨会”
-          </div>
-        
-          <div class="format-lead">
+          <h3 class="format-lead">
             为便于汇编，参会论文请参照如下规范：
-          </div>
+          </h3>
         
           <ol class="requirement-list">
             <li class="requirement-item">
