@@ -158,6 +158,28 @@ margin-right:12px;
   font-weight:700;
   margin-bottom:20px;
 }
+.org-panel{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+  align-items:center;
+}
+
+.org-row{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  justify-content:center;
+}
+
+.org-top img{
+  height:60px;
+}
+
+.org-row img{
+  height:48px;
+  object-fit:contain;
+}
 </style>
 </head>
 <body>
@@ -456,21 +478,41 @@ margin-right:12px;
       <div class="section-head">
         <h2>联系方式</h2>
       </div>
-
+  
       <div class="contact-grid">
+  
+          <div class="org-panel">
+          
+            <div class="org-row org-top">
+              <img src="ccf-logo.png" alt="CCF">
+            </div>
+          
+            <div class="org-row">
+              <img src="guanghua.png" alt="浙江大学光华法学院">
+              <img src="zju-lab.png" alt="浙江大学数字法治实验室">
+              <img src="digital-law.png" alt="浙江大学数字法治研究院">
+            </div>      
+          </div>
+        </div>
+  
         <div class="card soft contact-card">
+  
           <div>
             <strong>会务组收稿及联络邮箱</strong>
             <div>ccf_law_2026@163.com</div>
           </div>
+  
           <div>
             <strong>联系人</strong>
             <div>吴亦全</div>
           </div>
+  
           <div>
             <div>会议报名注册、参会费用、交通住宿等事项将另行通知。</div>
           </div>
+  
         </div>
+  
       </div>
     </div>
   </section>
