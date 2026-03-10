@@ -81,8 +81,8 @@ section{padding:82px 0}
 .dark-card p,.dark-card li{color:#cbd5e1}
 .contact-grid{
   display:grid;
-  grid-template-columns: 420px 1fr;
-  gap:50px;
+  grid-template-columns: 1.05fr 1fr;
+  gap:72px;
   align-items:center;
 }
 .contact-card>div{margin-bottom:16px}.contact-card>div:last-child{margin-bottom:0}
@@ -167,21 +167,62 @@ margin-right:12px;
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:20px;
+  justify-content:center;
+  gap:34px;
+  padding:12px 0;
 }
 
 .org-row{
   display:flex;
-  gap:20px;
   justify-content:center;
+  align-items:center;
+  gap:36px;
+  width:100%;
+}
+
+.org-top{
+  margin-bottom:4px;
 }
 
 .org-top img{
-  height:70px;
+  height:96px;
+  object-fit:contain;
 }
 
-.org-row img{
-  height:48px;
+.org-row:last-child img{
+  height:76px;
+  max-width:160px;
+  object-fit:contain;
+  filter: grayscale(0%);
+  opacity:0.96;
+  transition:transform .2s ease, opacity .2s ease;
+}
+
+.org-row:last-child img:hover,
+.org-top img:hover{
+  transform:scale(1.05);
+  opacity:1;
+}
+
+@media (max-width: 900px){
+  .contact-grid{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+
+  .org-top img{
+    height:84px;
+  }
+
+  .org-row:last-child{
+    flex-wrap:wrap;
+    gap:24px;
+  }
+
+  .org-row:last-child img{
+    height:64px;
+    max-width:140px;
+  }
 }
 </style>
 </head>
@@ -483,39 +524,39 @@ margin-right:12px;
       </div>
   
       <div class="contact-grid">
-  
+      
+        <div class="card soft contact-card">
+      
+          <div>
+            <strong>会务组收稿及联络邮箱</strong>
+            <div>ccf_law_2026@163.com</div>
+          </div>
+      
+          <div>
+            <strong>联系人</strong>
+            <div>吴亦全</div>
+          </div>
+      
+          <div>
+            <div>会议报名注册、参会费用、交通住宿等事项将另行通知。</div>
+          </div>
+      
+        </div>
+      
         <div class="org-panel">
-  
+      
           <div class="org-row org-top">
             <img src="ccf-logo.png" alt="CCF">
           </div>
-  
+      
           <div class="org-row">
             <img src="guanghua.png" alt="浙江大学光华法学院">
             <img src="zju-lab.png" alt="浙江大学数字法治实验室">
             <img src="digital-law.png" alt="浙江大学数字法治研究院">
           </div>
-  
+      
         </div>
-  
-        <div class="card soft contact-card">
-  
-          <div>
-            <strong>会务组收稿及联络邮箱</strong>
-            <div>ccf_law_2026@163.com</div>
-          </div>
-  
-          <div>
-            <strong>联系人</strong>
-            <div>吴亦全</div>
-          </div>
-  
-          <div>
-            <div>会议报名注册、参会费用、交通住宿等事项将另行通知。</div>
-          </div>
-  
-        </div>
-  
+      
       </div>
     </div>
   </section>
