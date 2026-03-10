@@ -79,6 +79,51 @@ section{padding:82px 0}
 .footer-inner{display:flex;justify-content:space-between;gap:20px;padding:24px 0;color:#64748b;font-size:14px}
 @media (max-width:1024px){.hero-grid,.grid-2,.submission-grid,.contact-grid{grid-template-columns:1fr}.grid-3{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:760px){.header-inner{min-height:auto;padding:14px 0;align-items:flex-start}.nav{gap:12px}.nav a{font-size:13px}.hero-grid{padding:60px 0}.grid-3,.highlight-grid,.meta-grid{grid-template-columns:1fr}section{padding:62px 0}.footer-inner{flex-direction:column}}
+.topics-grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:28px;
+align-items:stretch;
+}
+
+.topic-card{
+display:flex;
+flex-direction:column;
+height:100%;
+}
+
+.topic-title{
+display:flex;
+align-items:flex-start;
+gap:12px;
+font-size:20px;
+font-weight:700;
+margin-bottom:14px;
+}
+
+.topic-number{
+background:#eef2f7;
+color:#0f172a;
+font-weight:700;
+border-radius:999px;
+padding:4px 10px;
+font-size:13px;
+}
+
+.topic-card ul{
+margin:0;
+padding-left:20px;
+}
+
+.topic-card li{
+margin-bottom:6px;
+}
+
+@media (max-width:768px){
+.topics-grid{
+grid-template-columns:1fr;
+}
+}
 </style>
 </head>
 <body>
@@ -182,76 +227,99 @@ section{padding:82px 0}
         <p>本次征文聚焦计算法学的基础、方法、工具、系统与应用，议题可能包括但不限于以下内容：</p>
       </div>
 
-      <div class="grid-3">
-        <article class="card topic-card">
-          <h3>分论坛一：计算法学的学科理论与体系建构</h3>
-          <ul>
-            <li>计算法学的概念界定、基本范畴与核心命题</li>
-            <li>计算法学的跨学科知识结构与人才培养体系</li>
-            <li>计算法学的本土化评价标准与学科边界</li>
-            <li>法教义学、法社会学与计算法学的融合机制</li>
-          </ul>
-        </article>
+    <div class="topics-grid">
 
-        <article class="card topic-card">
-          <h3>分论坛二：计算法学的研究方法</h3>
-          <ul>
-            <li>大模型参与的实证研究设计与偏差控制</li>
-            <li>法律数据构建、标注规范与测量误差校正方法</li>
-            <li>法律文本计算的计量基础与可解释指标体系建构</li>
-            <li>因果推断与反事实框架在法律适用效果评估中的应用</li>
-          </ul>
-        </article>
+    <article class="card topic-card">
+    <div class="topic-title">
+    <span class="topic-number">01</span>
+    计算法学的学科理论与体系建构
+    </div>
+    <ul>
+    <li>计算法学的概念界定、基本范畴与核心命题</li>
+    <li>计算法学的跨学科知识结构与人才培养体系</li>
+    <li>计算法学的本土化评价标准与学科边界</li>
+    <li>法教义学、法社会学与计算法学的融合机制</li>
+    </ul>
+    </article>
 
-        <article class="card topic-card">
-          <h3>分论坛三：法律文本处理与法律语言智能</h3>
-          <ul>
-            <li>法律文本分类、信息抽取、自动摘要与生成式任务</li>
-            <li>法律检索、问答、类案推荐与文献推荐系统</li>
-            <li>论证挖掘、裁判说理结构化与可视化</li>
-            <li>大模型在法律领域的应用</li>
-            <li>多模态法律信息处理</li>
-          </ul>
-        </article>
-
-        <article class="card topic-card">
-          <h3>分论坛四：形式化推理模型与规范系统</h3>
-          <ul>
-            <li>裁判规则的可计算表达语言与知识表示</li>
-            <li>法律推理的形式与计算模型</li>
-            <li>证据推理的形式与计算模型</li>
-            <li>神经—符号结合方法在规范推理中的应用与评估</li>
-          </ul>
-        </article>
-
-        <article class="card topic-card">
-          <h3>分论坛五：法治场景中的大模型应用与评测</h3>
-          <ul>
-            <li>裁判辅助、量刑/类案分析、证据审查、庭审支持系统</li>
-            <li>行政执法与公共治理的决策支持、风险预警与因果推断</li>
-            <li>数据集、基准评测、复现研究与可重复性</li>
-            <li>大模型在法律实践中的有效边界、失误类型与纠错机制</li>
-          </ul>
-        </article>
-
-        <article class="card topic-card">
-          <h3>分论坛六：大模型治理：风险、责任与制度设计</h3>
-          <ul>
-            <li>可解释性、透明度、偏见与歧视防控、数据质量标准</li>
-            <li>隐私保护、数据权利、跨境数据流动与安全</li>
-            <li>责任分配、审计与问责、行业自律与监管协同</li>
-            <li>AI伦理、可信AI与法律职业规范的重构</li>
-          </ul>
-        </article>
-
-        <article class="card topic-card">
-          <h3>分论坛七：法律科技产品与系统落地</h3>
-          <ul>
-            <li>法律科技产品的需求洞察、用户研究与落地场景</li>
-            <li>法律大模型在司法、律所、企业合规中的应用边界</li>
-          </ul>
-        </article>
-      </div>
+    <article class="card topic-card">
+    <div class="topic-title">
+    <span class="topic-number">02</span>
+    计算法学的研究方法
+    </div>
+    <ul>
+    <li>大模型参与的实证研究设计与偏差控制</li>
+    <li>法律数据构建、标注规范与测量误差校正方法</li>
+    <li>法律文本计算的计量基础与可解释指标体系建构</li>
+    <li>因果推断与反事实框架在法律适用效果评估中的应用</li>
+    </ul>
+    </article>
+    
+    <article class="card topic-card">
+    <div class="topic-title">
+    <span class="topic-number">03</span>
+    法律文本处理与法律语言智能
+    </div>
+    <ul>
+    <li>法律文本分类、信息抽取、自动摘要与生成式任务</li>
+    <li>法律检索、问答、类案推荐与文献推荐系统</li>
+    <li>论证挖掘、裁判说理结构化与可视化</li>
+    <li>大模型在法律领域的应用</li>
+    <li>多模态法律信息处理</li>
+    </ul>
+    </article>
+    
+    <article class="card topic-card">
+    <div class="topic-title">
+    <span class="topic-number">04</span>
+    形式化推理模型与规范系统
+    </div>
+    <ul>
+    <li>裁判规则的可计算表达语言与知识表示</li>
+    <li>法律推理的形式与计算模型</li>
+    <li>证据推理的形式与计算模型</li>
+    <li>神经—符号结合方法在规范推理中的应用与评估</li>
+    </ul>
+    </article>
+    
+    <article class="card topic-card">
+    <div class="topic-title">
+    <span class="topic-number">05</span>
+    法治场景中的大模型应用与评测
+    </div>
+    <ul>
+    <li>裁判辅助、量刑/类案分析、证据审查、庭审支持系统</li>
+    <li>行政执法与公共治理的决策支持、风险预警与因果推断</li>
+    <li>数据集、基准评测、复现研究与可重复性</li>
+    <li>大模型在法律实践中的有效边界、失误类型与纠错机制</li>
+    </ul>
+    </article>
+    
+    <article class="card topic-card">
+    <div class="topic-title">
+    <span class="topic-number">06</span>
+    大模型治理：风险、责任与制度设计
+    </div>
+    <ul>
+    <li>可解释性、透明度、偏见与歧视防控、数据质量标准</li>
+    <li>隐私保护、数据权利、跨境数据流动与安全</li>
+    <li>责任分配、审计与问责、行业自律与监管协同</li>
+    <li>AI伦理、可信AI与法律职业规范的重构</li>
+    </ul>
+    </article>
+    
+    <article class="card topic-card">
+    <div class="topic-title">
+    <span class="topic-number">07</span>
+    法律科技产品与系统落地
+    </div>
+    <ul>
+    <li>法律科技产品的需求洞察、用户研究与落地场景</li>
+    <li>法律大模型在司法、律所、企业合规中的应用边界</li>
+    </ul>
+    </article>
+    
+    </div>
     </div>
   </section>
 
