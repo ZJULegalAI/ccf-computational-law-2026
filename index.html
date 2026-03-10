@@ -79,7 +79,12 @@ section{padding:82px 0}
 .dark-section .section-head p,.dark-section .section-tag{color:#94a3b8}
 .dark-card{border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.04);border-radius:var(--radius);padding:24px}
 .dark-card p,.dark-card li{color:#cbd5e1}
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px}
+.contact-grid{
+  display:grid;
+  grid-template-columns: 420px 1fr;
+  gap:50px;
+  align-items:center;
+}
 .contact-card>div{margin-bottom:16px}.contact-card>div:last-child{margin-bottom:0}
 .footer{border-top:1px solid var(--line);background:var(--bg-soft)}
 .footer-inner{display:flex;justify-content:space-between;gap:20px;padding:24px 0;color:#64748b;font-size:14px}
@@ -161,24 +166,22 @@ margin-right:12px;
 .org-panel{
   display:flex;
   flex-direction:column;
-  gap:28px;
   align-items:center;
+  gap:20px;
 }
 
 .org-row{
   display:flex;
-  gap:28px;
-  align-items:center;
+  gap:20px;
   justify-content:center;
 }
 
 .org-top img{
-  height:60px;
+  height:70px;
 }
 
 .org-row img{
   height:48px;
-  object-fit:contain;
 }
 </style>
 </head>
@@ -481,18 +484,18 @@ margin-right:12px;
   
       <div class="contact-grid">
   
-          <div class="org-panel">
-          
-            <div class="org-row org-top">
-              <img src="ccf-logo.png" alt="CCF">
-            </div>
-          
-            <div class="org-row">
-              <img src="guanghua.png" alt="浙江大学光华法学院">
-              <img src="zju-lab.png" alt="浙江大学数字法治实验室">
-              <img src="digital-law.png" alt="浙江大学数字法治研究院">
-            </div>      
+        <div class="org-panel">
+  
+          <div class="org-row org-top">
+            <img src="ccf-logo.png" alt="CCF">
           </div>
+  
+          <div class="org-row">
+            <img src="guanghua.png" alt="浙江大学光华法学院">
+            <img src="zju-lab.png" alt="浙江大学数字法治实验室">
+            <img src="digital-law.png" alt="浙江大学数字法治研究院">
+          </div>
+  
         </div>
   
         <div class="card soft contact-card">
